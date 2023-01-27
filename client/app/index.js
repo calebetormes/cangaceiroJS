@@ -11,6 +11,30 @@ var tbody = document.querySelector('table tbody');
 
 // Adiciona um evento de submit ao primeiro formulário encontrado no HTML
 document.querySelector('.form').addEventListener('submit', function(event) {
-        alert('oi');// Mostra uma caixa de diálogo "oi" quando o formulário é enviado 
-    }
-);
+        event.preventDefault();
+
+        // Cria uma nova linha na tabela
+        var tr =  document.createElement('tr');
+    
+        // Itera sobre cada elemento na array "campos"
+        campos.forEach(function(campo) {
+            
+            var td = document.createElement('td');// Cria uma nova célula na tabela          
+            td.textContent = campo.value;// Atribui o valor do campo atual à célula
+            tr.append(td);// Adiciona a célula à linha
+        });s
+
+
+        // nova td que armazenará o volume da negociação 
+        var tdVolume = document .createElement( 'td' );
+
+        tr.append(tdVolume);
+        tbody.append(tr);
+
+    });
+
+
+
+
+
+var tdvolume = document.createElement('td');
